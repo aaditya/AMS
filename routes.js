@@ -23,11 +23,11 @@ router.get('/numTicketsBooked',function(req,res){
 })
 
 router.get('/listFlights',function(req,res){
-  var nut = require('./route/listTickets.js')(req,res)
+  var lf = require('./route/listTickets.js')(req,res)
 })
 
 router.get('/listUsers',function(req,res){
-  var nut = require('./route/listUsers.js')(req,res)
+  var lu = require('./route/listUsers.js')(req,res)
 })
 
 module.exports = router
