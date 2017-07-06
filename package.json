@@ -1,0 +1,29 @@
+{
+  "name": "airline-management-system",
+  "version": "0.0.1",
+  "description": "Airline Management System for basic CRUD demo.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aadityachakravarty/AMS.git"
+  },
+  "keywords": [
+    "Airline",
+    "Management",
+    "System",
+    "Backend"
+  ],
+  "author": "Aaditya Chakravarty and Sahib Singh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aadityachakravarty/AMS/issues"
+  },
+  "homepage": "https://github.com/aadityachakravarty/AMS#readme",
+  "dependencies": {
+    "express": "^4.15.3",
+    "mongoose": "^4.11.1"
+  }
+}
