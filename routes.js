@@ -2,50 +2,32 @@ var express = require('express')
 var router = express.Router()
 var mongoose = require('mongoose')
 
-/* Model Import */
-var dog = require('./models/dog.js')
-
 /* Mongoose connection */
-mongoose.connect('mongodb://admin:12345@ds139942.mlab.com:39942/comaaditya')
+mongoose.connect('mongodb://admin:admin123@ds032887.mlab.com:32887/ams')
 
 /* Page Routes */
 router.get('/',function(req,res){
-  res.send("Hello World !")
+  res.sendFile(__dirname + "/pages/index.html")
 })
 
-router.post('/',function(req,res){
-  res.send('Hello POST !')
+router.post('/bookFlight',function(req,res){
+  var nt = require('./route/newTicket.js')(req,res)
 })
 
-router.get('/name/:user_name',function(req,res){
-  res.status(200)
-  res.set('Content-type','text/html')
-  res.send('<html><body>Hi! '+req.params.user_name+'</body></html>');
+router.get('/deleteFlight/:flightNum',function(req,res){
+  var dt = require('./route/deleteTicket.js')(req,res)
 })
 
-router.post('/username',function(req,res){
-  var username = req.body.username
-  res.send(username)
+router.get('/numTicketsBooked',function(req,res){
+  var nut = require('./route/numTickets.js')(req,res)
 })
 
-router.post('/registration',function(req,res){
-  var firstName = req.body.firstName
-  var lastName = req.body.lastName
-  var email = req.body.email
-  var phone = req.body.phone
-
-  res.json(firstName)
+router.get('/listFlights',function(req,res){
+  var nut = require('./route/listTickets.js')(req,res)
 })
 
-router.post('/dogName',function(req,res){
-  var dogName = req.body.name
-
-  dog.findOne({'name':dogName},function(err,data){
-    if(err) {
-      res.send(err)
-    }
-    res.json(data)
-  })
+router.get('/listUsers',function(req,res){
+  var nut = require('./route/listUsers.js')(req,res)
 })
 
 module.exports = router
